@@ -1,3 +1,4 @@
+import { IUser } from "../models/user";
 import { apiClient } from "./client";
 
 export interface LoginRequest {
@@ -12,11 +13,7 @@ export interface RegisterRequest {
 }
 
 export interface AuthResponse {
-  user: {
-    id: string;
-    email: string;
-    name: string;
-  };
+  user: IUser;
 }
 
 export const authApi = {
