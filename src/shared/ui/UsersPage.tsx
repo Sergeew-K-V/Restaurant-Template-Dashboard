@@ -2,7 +2,7 @@
 
 import { Table, Card, Alert, Button, Space, Input, Tag, Avatar } from "antd";
 import { PlusOutlined, SearchOutlined, UserOutlined } from "@ant-design/icons";
-import { useUsers } from "../queries/users";
+import { useUsers } from "../hooks";
 import { IUser } from "../models/user";
 
 const UsersPage: React.FC = () => {

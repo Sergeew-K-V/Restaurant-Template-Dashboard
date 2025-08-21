@@ -1,6 +1,6 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { authApi, LoginRequest, RegisterRequest } from "../api/auth";
-import { cookieUtils } from "../lib/cookies";
+import { useMutation } from "@tanstack/react-query";
+import { authApi, LoginRequest, RegisterRequest } from "../../api/auth";
+import { cookieUtils } from "../../lib/cookies";
 
 export const useLogin = () => {
   return useMutation({
@@ -33,24 +33,4 @@ export const useLogout = () => {
       localStorage.removeItem("user");
     },
   });
-};
-
-export const useProfile = () => {
-  return useQuery({
-    queryKey: ["profile"],
-    queryFn: () => authApi.getProfile(),
-    enabled: true, // Cookie проверяется на сервере
-  });
-};
-
-// Хук для проверки аутентификации
-export const useAuth = () => {
-  const profileQuery = useProfile();
-
-  return {
-    user: profileQuery.data,
-    isLoading: profileQuery.isLoading,
-    isAuthenticated: !!profileQuery.data,
-    error: profileQuery.error,
-  };
 };
