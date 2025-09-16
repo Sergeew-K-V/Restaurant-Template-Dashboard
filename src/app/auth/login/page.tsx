@@ -4,7 +4,7 @@ import { Button, Form, Input, Card, Typography, message } from "antd";
 import { LockOutlined, MailOutlined } from "@ant-design/icons";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { useLogin } from "@/shared/queries/auth";
+import { useLogin } from "@/shared/hooks";
 
 const { Title, Text } = Typography;
 

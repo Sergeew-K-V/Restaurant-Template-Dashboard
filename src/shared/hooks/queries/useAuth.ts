@@ -1,6 +1,5 @@
 import { useProfile } from "./useProfile";
 
-// Хук для проверки аутентификации
 export const useAuth = () => {
   const profileQuery = useProfile();
 
