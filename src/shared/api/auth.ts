@@ -31,8 +31,8 @@ export const authApi = {
     await apiClient.post("/auth/logout");
   },
 
-  getProfile: async (): Promise<AuthResponse["user"]> => {
-    const response = await apiClient.get("/auth/profile");
+  getProfile: async (id: string): Promise<AuthResponse["user"]> => {
+    const response = await apiClient.get(`/profile/${id}`);
     return response.data;
   },
 };
